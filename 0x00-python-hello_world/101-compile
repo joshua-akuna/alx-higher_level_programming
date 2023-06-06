@@ -1,3 +1,2 @@
 #!/usr/bin/bash
-echo "import py_compile
-py_compile.compile(\'${PYFILE}\', \'${OUTPUT_FILE}c\')" | python3
+python3 -c "import py_compile; py_compile.compile('$PYFILE', f'${PYFILE}c')"
