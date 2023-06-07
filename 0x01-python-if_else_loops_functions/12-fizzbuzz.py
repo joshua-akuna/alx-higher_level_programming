@@ -12,3 +12,5 @@ def fizzBuzz():
             s = str(num)
         print("{}".format(s), end=' ')
     print()
+
+fizzBuzz()
