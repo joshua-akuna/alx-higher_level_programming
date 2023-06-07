@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-for letter in 'abcdefghijklmnopqrstuvwxyz':
-    if letter not in ('q', 'e'):
-        print("{}".format(letter), end='')
-print()
+for letter in range(ord('a'), ord('z') + 1):
+    if chr(letter) != 'q' and chr(letter) != 'e':
+        print("{:c}".format(letter), end='')
