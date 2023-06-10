@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 from calculator_1 import add, sub, div, mul
+
 if __name__ == "__main__":
     argc = len(sys.argv)
     if argc - 1 != 3:
@@ -20,8 +21,8 @@ if __name__ == "__main__":
     elif operator == '/':
         res = a / b
     else:
-        print('Unknown operator. Available operators: +, -, *, /')
+        print('Unknown operator. Available operators: +, -, * and /')
         sys.exit(1)
 
-    print("{:d} {:s} {:d} = {}".format(a, operator, b, res))
+    print("{} {} {} = {}".format(a, operator, b, res))
     sys.exit(0)
