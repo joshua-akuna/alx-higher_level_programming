@@ -10,4 +10,5 @@ def fizzBuzz():
         else:
             print("{}".format(num), end=' ')
 
+
 fizzBuzz()
