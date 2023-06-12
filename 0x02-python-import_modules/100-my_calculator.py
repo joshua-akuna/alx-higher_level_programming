@@ -13,16 +13,15 @@ if __name__ == "__main__":
     b = int(sys.argv[3])
 
     if operator == '+':
-        res = a + b
+        res = add(a, b)
     elif operator == '-':
-        res = a - b
+        res = sub(a, b)
     elif operator == '*':
-        res = a * b
+        res = mul(a, b)
     elif operator == '/':
-        res = a / b
+        res = div(a, b)
     else:
         print('Unknown operator. Available operators: +, -, * and /')
         exit(1)
-
     print("{} {} {} = {}".format(a, operator, b, res))
     exit(0)
