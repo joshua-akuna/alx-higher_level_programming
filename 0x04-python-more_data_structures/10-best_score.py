@@ -10,4 +10,4 @@ def best_score(a_dictionary):
         if val > maxim:
             res = key
             maxim = val
-    return res;
+    return res
