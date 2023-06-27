@@ -26,7 +26,7 @@ class Square:
     """Defines the getter for the private instance position property"""
     @property
     def position(self):
-        return (self.__position)
+        return self.__position
 
     """Defines the setter for the private instance position property"""
     @position.setter
@@ -35,12 +35,12 @@ class Square:
                 or type(value[0]) is not int or type(value[1]) is not int\
                 or value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__postion = value
+        self.__position = value
 
     """The area method returns the area = size * size of the
         a Square instance"""
     def area(self):
-        return (self.__size * self.__size)
+        return (self.size * self.size)
 
     """returns a square of '#' of length size"""
     def __str__(self):
