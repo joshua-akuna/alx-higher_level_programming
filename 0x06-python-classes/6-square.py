@@ -6,12 +6,8 @@ class Square:
     """Defines the constructor for the Square class the initializes
         the private instance size and position tuple of the instance(self)"""
     def __init__(self, size=0, position=(0, 0)):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     """Defines the getter for the private instance self property"""
     @property
