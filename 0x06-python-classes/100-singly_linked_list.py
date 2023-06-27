@@ -38,6 +38,8 @@ class Node:
 
 
 class SinglyLinkedList:
+    """A constructor for the SinglyLinkedList class which initializes
+        the head property"""
     def __init__(self):
         self.head = None
 
