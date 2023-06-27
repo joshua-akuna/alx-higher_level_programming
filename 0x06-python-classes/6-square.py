@@ -46,13 +46,21 @@ class Square:
     def area(self):
         return (self.__size * self.__size)
 
+    """returns a square of '#' of length size"""
+    def __str__(self):
+        to_string = ''
+        if self.__size == 0:
+            return '\n'
+
+        for item in range(self.position[1]):
+            to_string += '\n'
+        for item in range(self.size):
+            if (item):
+                to_string += '\n'
+            to_string += " " * self.position[0]
+            to_string += "#" * self.size
+        return (to_string)
+
     """prints a square of '#' of length size"""
     def my_print(self):
-        if self.__size == 0:
-            print()
-
-        for i in range(self.__size):
-            print("_" * self.__position[0], end='')
-            for j in range(self.__size):
-                print("{}".format('#'), end='')
-            print()
+        print(self)
