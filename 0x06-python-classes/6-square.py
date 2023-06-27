@@ -37,6 +37,7 @@ class Square:
     def position(self, value):
         if type(value) is not tuple or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__postion = value
 
     """The area method returns the area = size * size of the
         a Square instance"""
