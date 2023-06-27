@@ -4,7 +4,8 @@
 
 class Square:
     """Constructor of the square class with the instance of
-        the class (self) as the first argnument"""
+        the class (self) as the first argnument and initializes
+        the private instance property size"""
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
