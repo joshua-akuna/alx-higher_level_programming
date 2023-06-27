@@ -51,12 +51,11 @@ class Square:
         for item in range(self.position[1]):
             to_string += '\n'
         for item in range(self.size):
-            if (item):
-                to_string += '\n'
             to_string += " " * self.position[0]
             to_string += "#" * self.size
+            to_string += '\n'
         return (to_string)
 
     """prints a square of '#' of length size"""
     def my_print(self):
-        print(self)
+        print(self, end="")
