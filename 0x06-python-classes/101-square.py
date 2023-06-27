@@ -43,17 +43,17 @@ class Square:
         return (self.size * self.size)
 
     """returns a square of '#' of length size"""
-    def __str__(self):
+    def __repr__(self):
         to_string = ''
         if self.__size == 0:
-            return '\n'
+            return to_string
 
-        for item in range(self.position[1]):
-            to_string += '\n'
+        to_string += '\n' * self.position[1]
         for item in range(self.size):
+            if (item):
+                to_string += '\n'
             to_string += " " * self.position[0]
             to_string += "#" * self.size
-            to_string += '\n'
         return (to_string)
 
     """prints a square of '#' of length size"""
