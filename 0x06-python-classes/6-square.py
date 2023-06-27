@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Definition for the Square class"""
+
 
 class Square:
     """Defines the constructor for the Square class the initializes
