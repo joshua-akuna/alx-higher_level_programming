@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""an empty square class
-"""
+"""An empty Square class"""
 
 
 class Square:
+    """ A place holder for future logic"""
     pass
