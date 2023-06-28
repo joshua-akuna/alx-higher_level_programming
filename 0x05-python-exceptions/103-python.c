@@ -9,7 +9,7 @@ void print_python_bytes(PyObject *p)
 {
 	PyBytesObject *pbo = (PyBytesObject *)p;
 	PyVarObject *pvo = NULL;
-	Py_ssize_t size, i;
+	Py_ssize_t size, i = 0;
 
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
@@ -28,13 +28,14 @@ void print_python_bytes(PyObject *p)
 	else
 		size++;
 	printf("  first %ld bytes: ", size);
-	for (i = 0; i < size; i++)
+	while (i < size)
 	{
 		printf("%02hhx", pbo->ob_sval[i]);
 		if (i == (size - 1))
 			printf("\n");
 		else
 			printf(" ");
+		i++;
 	}
 }
 
