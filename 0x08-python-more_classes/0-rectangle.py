@@ -10,4 +10,5 @@ The module defines an empty Rectangle class
 
 
 class Rectangle:
+    """ An empty class of type Rectangle """
     pass
