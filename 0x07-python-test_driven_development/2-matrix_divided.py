@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module defines the matrix_divided funtion"""
 
 def matrix_divided(matrix, div):
     """The matrix_divided function divides each integer/float element
