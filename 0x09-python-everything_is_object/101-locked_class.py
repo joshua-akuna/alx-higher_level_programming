@@ -8,12 +8,11 @@ class LockedClass:
         new instance attributes, except if the new class
         is called first_name
     """
+    __slots__ = ("first_name")
 
     def __setattr__(self, name, value):
-        """Defines the setettr magic function"""
-
-        err = "'LockedClass' object has no attribute 'last_name'"
-        if name != "first_name":
+        err = "'LockedClass' object has no attribue 'last_name'"
+        
+        if not hasattr(self, name) and name != 'first_name':
             raise AttributeError(err)
-        else:
-            self.__dict__[name] = value
+        super().__setattr__(name, value)
