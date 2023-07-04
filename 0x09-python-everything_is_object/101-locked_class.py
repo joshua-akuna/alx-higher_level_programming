@@ -13,7 +13,7 @@ class LockedClass:
         """Defines the setettr magic function"""
 
         err = "'LockedClass' object has no attribute 'last_name'"
-        if name == "first_name":
-            self.__dict__[name] = value
-        else:
+        if name != "first_name":
             raise AttributeError(err)
+        else:
+            self.__dict__[name] = value
