@@ -8,6 +8,7 @@ mult_row_by_col functions that returns the product of two
 [[13, 16]]
 """
 
+
 def matrix_mul(m_a, m_b):
     """
     The function returns the product of 2 valid matrices

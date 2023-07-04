@@ -1,4 +1,7 @@
-
+This is a test fot the 100-matrix_mul module
+==============================================
+This is a doctest file for the matrix_mul function
+----------------------------------------------------
 >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
 >>> matrix_mul([[1, 2, 3, 1], [4, 5, 6, 2], [7, 8, 9, 3]], [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
