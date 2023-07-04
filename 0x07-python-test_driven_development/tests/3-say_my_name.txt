@@ -1,0 +1,21 @@
+This is placeholder
+=====================
+This is a placeholder
+-----------------------
+>>> say_my_name  = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("Akuna", "Joshua")
+My name is Akuna Joshua
+
+>>> say_my_name(None, "kent")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Nikola", "Tesla")
+My name is Nikola Tesla
+
+>>> say_my_name("Bruce", 2)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
