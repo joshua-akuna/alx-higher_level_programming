@@ -12,7 +12,6 @@ class LockedClass:
 
     def __setattr__(self, name, value):
         err = "'LockedClass' object has no attribue 'last_name'"
-        
         if not hasattr(self, name) and name != 'first_name':
             raise AttributeError(err)
         super().__setattr__(name, value)
