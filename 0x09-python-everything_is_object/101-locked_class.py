@@ -10,6 +10,6 @@ class LockedClass:
     """
     def __setattr__(self, name, value):
         err = "'LockedClass' object has no attribue '{}'"
-        if not hasattr(self, name) and name != 'first_name':
+        if name != 'first_name':
             raise AttributeError(err.format(name))
-        super().__setattr__(name, value)
+        self.__dict__[name] = value
