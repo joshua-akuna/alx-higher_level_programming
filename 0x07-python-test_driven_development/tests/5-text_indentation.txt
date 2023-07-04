@@ -1,0 +1,22 @@
+Doctest text file for the 5-text_indentation module
+====================================================
+These are tests for the text_indentation function
+-----------------------------------------------------
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("""Quonnam modo? Utrum igitur tibi litteram""")
+Quonnam modo?
+<BLANKLINE>
+Utrum igitur tibi litteram
+
+>>> text_indentation("""Non autem hoc: igitur ne illudquidem""")
+Non autem hoc:
+<BLANKLINE>
+igitur ne illudquidem
+
+>>> text_indentation("""Si di dicis, vicimus.""")
+Si di dicis, vicimus.
+<BLANKLINE>
+
+>>> text_indentation("""Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
