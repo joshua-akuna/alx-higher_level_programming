@@ -14,4 +14,5 @@ class LockedClass:
         err = "'LockedClass' object has no attribute '{}'"
         if name != 'first_name':
             raise AttributeError(err.format(name))
-        self.__dict__[name] = value
+        #self.__dict__[name] = value
+        super().__setattr__(name, value)
