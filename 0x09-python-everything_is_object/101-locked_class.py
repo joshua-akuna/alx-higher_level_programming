@@ -12,7 +12,6 @@ class LockedClass:
     def __setattr__(self, name, value):
         """setattr magic method"""
         err = "'LockedClass' object has no attribute '{}'"
-        if name != 'first_name':
+        if not hasattr(self, 'first_name') and name != 'first_name':
             raise AttributeError(err.format(name))
-        #self.__dict__[name] = value
         super().__setattr__(name, value)
