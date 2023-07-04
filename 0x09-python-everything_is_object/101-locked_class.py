@@ -8,10 +8,8 @@ class LockedClass:
         new instance attributes, except if the new class
         is called first_name
     """
-    __slots__ = ('first_name',)
-
     def __setattr__(self, name, value):
-        err = "'LockedClass' object has no attribue 'last_name'"
+        err = "'LockedClass' object has no attribue '{}'"
         if not hasattr(self, name) and name != 'first_name':
-            raise AttributeError(err)
-        self.__dict__[name] = value
+            raise AttributeError(err.format(name))
+        super().__setattr__(name, value)
