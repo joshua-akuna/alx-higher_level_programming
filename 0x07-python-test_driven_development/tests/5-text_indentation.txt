@@ -1,6 +1,6 @@
-Doctest text file for the 5-text_indentation module
-====================================================
-These are tests for the text_indentation function
+This ia a doctest text file for the 5-text_indentation module
+==============================================================
+These are doctests for the text_indentation function
 -----------------------------------------------------
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 

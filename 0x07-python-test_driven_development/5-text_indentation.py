@@ -8,6 +8,7 @@ def text_indentation(text):
     charaters: .?: found in the text argument with no spaces at
     the beginning and end of each printed line.
     """
+
     if type(text) is not str:
         raise TypeError("text must be a string")
 
