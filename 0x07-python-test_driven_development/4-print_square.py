@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 """
 This module defines the print_square function that prints a
 square of "#'s" whose side is of length of argument size.
