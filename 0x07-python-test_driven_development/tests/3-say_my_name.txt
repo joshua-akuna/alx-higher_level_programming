@@ -19,3 +19,6 @@ My name is Nikola Tesla
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
+
+>>> say_my_name("Bob")
+My name is Bob 
