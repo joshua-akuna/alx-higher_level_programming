@@ -29,8 +29,8 @@ class Rectangle:
         width and height fields and increments the value of the
         number_of_instances class variable by a value of 1
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def area(self):
