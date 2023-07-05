@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines the matrix_divided funtion"""
 
+
 def matrix_divided(matrix, div):
     """The matrix_divided function divides each integer/float element
         of the matrix argument by the div argument.
@@ -14,14 +15,13 @@ def matrix_divided(matrix, div):
     if type(matrix) is not list or len(matrix) < 1:
         raise TypeError(type_err)
 
-
     for row in matrix:
         if type(row) is not list:
             raise TypeError(type_err)
         for item in row:
             if type(item) is not int and type(item) is not float:
                 raise TypeError(type_err)
-    
+
     row_size = len(matrix[0])
     for row in matrix:
         if len(row) != row_size:
