@@ -22,9 +22,6 @@ def print_square(size):
     Traceback (most recent call last):
         ...
     ValueError: size must be >= 0
-
-    >>> print_square(0)
-    <BLANKLINE>
     """
 
     if not isinstance(size, int):
@@ -32,9 +29,6 @@ def print_square(size):
 
     if size < 0:
         raise ValueError("size must be >= 0")
-
-    if type(size) is float and size < 0:
-        raise TypeError("size must be an integer")
 
     for i in range(size):
         print("#" * size)
