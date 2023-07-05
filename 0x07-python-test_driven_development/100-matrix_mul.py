@@ -23,9 +23,15 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list")
 
     # checks if the list arguments are empty or contain empty list
-    if len(m_a) < 1 or len(m_a[0]) < 1:
+    if len(m_a) < 1:
         raise ValueError("m_a can't be empty")
-    if len(m_b) < 1 or len(m_b[0]) < 1:
+    if len(m_b) < 1:
+        raise ValueError("m_b can't be empty")
+
+    # checks if the list arguments are empty or contain empty list
+    if type(m_a[0]) is list and len(m_a[0]) < 1:
+        raise ValueError("m_a can't be empty")
+    if type(m_b[0]) is list and len(m_b[0]) < 1:
         raise ValueError("m_b can't be empty")
 
     # checks to validate that both list arguments contains only lists
