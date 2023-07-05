@@ -36,6 +36,27 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-1, -2, -5, -7, -9]), -1)
         self.assertEqual(max_integer([-21, -92, -85, -15, -19]), -15)
 
+    def test_float(self):
+        self.assertEqual(max_integer([1.3, 3.9, 1.2, 3.10]), 3.9)
+        self.assertEqual(max_integer([-1.3, -3.9, -1.2, -3.10]), -1.2)
+
+    def test_string(self):
+        self.assertEqual(max_integer("123456789"), "9")
+        self.assertEqual(max_integer("0, 1, 4, 5, 8"), "8")
+        self.assertEqual(max_integer(["abd", "1.0", "70", "xyz"]), "xyz")
+
+    def test_ds(self):
+        self.assertEqual(max_integer([[1, 2, 3], [1, 3, 2]]), [1, 3, 2])
+        self.assertEqual(max_integer([(4, 6, 8), (5, 3, 2)]), (5, 3, 2))
+
+    def test_none(self):
+        with self.assertRaises(TypeError):
+            max_integer(None)
+
+    def text_combination(self):
+        with self.assertRaises(TypeError):
+            max_integer(["error", 6.9, 14, -7, [1, 2, 3]])
+
 
 if __name__ == '__main__':
     unittest.main()
