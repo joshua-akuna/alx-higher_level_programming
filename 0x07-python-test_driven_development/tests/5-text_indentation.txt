@@ -20,3 +20,8 @@ Si di dicis, vicimus.
 
 >>> text_indentation("""Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
 Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
