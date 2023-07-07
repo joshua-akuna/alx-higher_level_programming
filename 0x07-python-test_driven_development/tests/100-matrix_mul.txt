@@ -54,3 +54,13 @@ TypeError: m_b must be a list of lists
 Traceback (most recent call last):
     ...
 TypeError: m_a must be a list of lists
+
+>>> matrix_mul("Error", [[5, 6], [7, 8]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+
+>>> matrix_mul([1, 2, 3, 4], "Fibbing")
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
