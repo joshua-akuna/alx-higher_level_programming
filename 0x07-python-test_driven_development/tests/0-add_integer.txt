@@ -38,3 +38,11 @@ Below are interactive examples
 	Traceback (most recent call last):
 	...
 	TypeError: b must be an integer
+
+	>>> add_integer(4.32424324234423423, 3.2342342342343324)
+	7
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
