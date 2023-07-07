@@ -61,3 +61,13 @@ ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with
 Traceback (most recent call last):
 ...
 ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]],)
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
