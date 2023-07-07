@@ -64,3 +64,13 @@ TypeError: m_a must be a list
 Traceback (most recent call last):
     ...
 TypeError: m_b must be a list
+
+>>> matrix_mul( , )
+Traceback (most recent call last):
+    ...
+SyntaxError: invalid syntax
+
+>>> matrix_mul([[5, 6], [7, 8]], )
+Traceback (most recent call last):
+    ...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
