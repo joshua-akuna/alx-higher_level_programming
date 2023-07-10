@@ -20,10 +20,6 @@ class Rectangle(BaseGeometry):
         """Calculates the area of the Rectangle object"""
         return self.__width * self.__height
 
-    def print(self):
-        """The print function prints the dimensions of a Rectangle instance"""
-        print(self)
-
     def __str__(self):
         """Implements the toString() method"""
         return f"[Rectangle] {self.__width}/{self.__height}"
