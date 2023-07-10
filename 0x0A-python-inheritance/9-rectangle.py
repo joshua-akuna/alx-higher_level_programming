@@ -16,16 +16,13 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-
     def area(self):
         """Calculates the area of the Rectangle object"""
         return self.__width * self.__height
 
-
-    def print():
-        """The print function prints the dimensions of the Rectangle instance"""
+    def print(self):
+        """The print function prints the dimensions of a Rectangle instance"""
         print(self)
-
 
     def __str__(self):
         """Implements the toString() method"""
