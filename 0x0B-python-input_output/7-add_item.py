@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""""""
+"""The module contains functionalities that adds all arguments
+to a Python list, and then save them to a file
+"""
 
 # imports the required modules
 import json
