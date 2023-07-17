@@ -21,8 +21,32 @@ class Rectangle(Base):
             print(' ' * self.x, end='')
             print('#' * self.width)
 
+    def update(self, *args, **kwargs):
+        size = len(args)
+        if size > 0:
+            self.id = args[0]
+        if size > 1:
+            self.width = args[1]
+        if size > 2:
+            self.height = args[2]
+        if size > 3:
+            self.x = args[3]
+        if size > 4:
+            self.y = args[4]
+
+        if size == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
     def __str__(self):
-        return f"[Rectangle] {self.id} {self.x}/{self.y} - {self.width}/{self.height}"
+        return "[{}] ({}) {}/{} - {}/{}".format(
+            self.__class__.__name__,
+            self.id,
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        )
 
     @property
     def width(self):
