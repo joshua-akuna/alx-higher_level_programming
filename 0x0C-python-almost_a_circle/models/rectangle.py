@@ -11,6 +11,9 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def area(self):
+        return self.height * self.width
+
     @property
     def width(self):
         return self.__width
@@ -25,7 +28,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        return self.__width
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -33,7 +36,7 @@ class Rectangle(Base):
             raise TypeError('height must be an integer')
         if value <= 0:
             raise ValueError('height must be > 0')
-        self.__width = value
+        self.__height = value
 
     @property
     def x(self):
