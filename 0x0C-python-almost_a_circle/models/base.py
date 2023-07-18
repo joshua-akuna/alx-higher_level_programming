@@ -35,3 +35,17 @@ class Base:
         dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        list_of_base_objs = []
+
+        filename = cls.__name__ + '.json'
+        with open(filename, 'r') as f:
+            buffer = f.read()
+        list_of_dictionaries = json.loads(buffer)
+
+        for dictionary in list_of_dictionaries:
+            list_of_base_objs.append(cls.create(**dictionary))
+
+        return list_of_base_objs
