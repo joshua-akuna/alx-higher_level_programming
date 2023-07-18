@@ -29,3 +29,9 @@ class Base:
 
         with open(filename, 'w') as f:
             f.write(_json)
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
