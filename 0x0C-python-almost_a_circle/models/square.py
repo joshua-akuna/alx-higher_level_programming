@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """The square model defines the Square class"""
 from models.rectangle import Rectangle
 
