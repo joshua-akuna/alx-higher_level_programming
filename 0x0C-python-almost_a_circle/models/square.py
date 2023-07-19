@@ -11,7 +11,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """constructor for the initialization of Square instances"""
         super().__init__(size, size, x, y, id)
-    
+
     def update(self, *args, **kwargs):
         """
         This funtion is used to update the properties of
