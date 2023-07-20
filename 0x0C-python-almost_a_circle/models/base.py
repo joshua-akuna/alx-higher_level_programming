@@ -41,10 +41,11 @@ class Base:
         filename = cls.__name__ + ".json"
         arr = []
 
-        for obj in list_objs:
-            arr.append(obj.to_dictionary())
+        if list_objs is not None:
+            for obj in list_objs:
+                arr.append(obj.to_dictionary())
+            
         _json = cls.to_json_string(arr)
-
         with open(filename, 'w') as f:
             f.write(_json)
 
