@@ -32,6 +32,15 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """  """
+        if json_string is None:
+            return []
+        dicts_list = json.loads(json_string)
+        return dicts_list
+
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -55,7 +64,11 @@ class Base:
         create a new base sub class whose properties are updated
         with the dictionary argument property
         """
-        dummy = cls(1, 1)
+        if cls.__name__ is 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ is 'Square':
+            dummy = cls(1)
+
         dummy.update(**dictionary)
         return dummy
 
@@ -65,9 +78,13 @@ class Base:
         list_of_base_objs = []
 
         filename = cls.__name__ + '.json'
-        with open(filename, 'r') as f:
-            buffer = f.read()
-        list_of_dictionaries = json.loads(buffer)
+        try:
+            with open(filename, 'r') as f:
+                buffer = f.read()
+        except FileNotFoundError:
+            return []
+
+        list_of_dictionaries = cls.from_json_string(buffer)
 
         for dictionary in list_of_dictionaries:
             list_of_base_objs.append(cls.create(**dictionary))
