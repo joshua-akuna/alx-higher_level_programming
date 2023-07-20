@@ -40,7 +40,6 @@ class Base:
         dicts_list = json.loads(json_string)
         return dicts_list
 
-
     @classmethod
     def save_to_file(cls, list_objs):
         """
