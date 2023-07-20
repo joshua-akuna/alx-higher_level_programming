@@ -58,11 +58,11 @@ class Rectangle(Base):
         of the current rectangle instnace.
         """
         return {
+            'y': self.y,
+            'x': self.x,
             'id': self.id,
             'width': self.width,
-            'height': self.height,
-            'x': self.x,
-            'y': self.y
+            'height': self.height
         }
 
     def __str__(self):
