@@ -25,6 +25,19 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def __str__(self):
+        """
+        This function returns a string representation of the
+        the current rectangle instance.
+        """
+        return "[{}] ({}) {}/{} - {}".format(
+            self.__class__.__name__,
+            self.id,
+            self.x,
+            self.y,
+            self.size
+        )
+
     @property
     def size(self):
         """getter for the size property"""
