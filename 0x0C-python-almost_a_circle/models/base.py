@@ -121,8 +121,8 @@ class Base:
         return rows
 
     @classmethod
-    """This method converts a single csv row to a base object"""
     def csv_row_to_base_obj(cls, csv_row):
+        """This method converts a single csv row to a base object"""
         params = csv_row.split(',')
 
         if (len(params) == 4):
