@@ -35,7 +35,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """  """
+        """converts a json string to a base object dictionary"""
         if json_string is None:
             return []
         dicts_list = json.loads(json_string)
@@ -116,9 +116,9 @@ class Base:
             with open(filename, 'r', newline='') as f:
                 reader = csv.reader(f)
                 rows = [cls.csv_row_to_base_obj(row[0]) for row in reader]
-                return rows
         except FileNotFoundError:
             return []
+        return rows
 
     @classmethod
     """This method converts a single csv row to a base object"""
