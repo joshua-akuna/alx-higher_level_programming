@@ -79,6 +79,13 @@ class Rectangle(Base):
             self.height
         )
 
+    def __repr__(self):
+        """
+        returns the repr string representation of the current Rectangle
+        instance.
+        """
+        return f"{self.id},{self.width},{self.height},{self.x},{self.y}"
+
     @property
     def width(self):
         """getter for the width property"""

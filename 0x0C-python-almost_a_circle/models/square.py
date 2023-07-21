@@ -38,6 +38,13 @@ class Square(Rectangle):
             self.size
         )
 
+    def __repr__(self):
+        """
+        returns the repr string representation of the current
+        Square instance
+        """
+        return f"{self.id},{self.size},{self.x},{self.y}"
+
     @property
     def size(self):
         """getter for the size property"""

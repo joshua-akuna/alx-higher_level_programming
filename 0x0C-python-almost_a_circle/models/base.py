@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This module defines the Base super class """
 import json
+import csv
 
 
 class Base:
@@ -63,9 +64,9 @@ class Base:
         create a new base sub class whose properties are updated
         with the dictionary argument property
         """
-        if cls.__name__ is 'Rectangle':
+        if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
-        elif cls.__name__ is 'Square':
+        elif cls.__name__ == 'Square':
             dummy = cls(1)
 
         dummy.update(**dictionary)
@@ -89,3 +90,55 @@ class Base:
             list_of_base_objs.append(cls.create(**dictionary))
 
         return list_of_base_objs
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes a list of Base sub classes to a csv file"""
+        filename = cls.__name__ + '.csv'
+
+        if list_objs is not None:
+            with open(filename, 'w', newline='') as f:
+                writer = csv.writer(f)
+
+                for obj in list_objs:
+                    writer.writerow([repr(obj)])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        reads data from a csv file and converts each row to
+        a base object.
+        """
+        list_of_base_objs = []
+        filename = cls.__name__ + '.csv'
+
+        try:
+            with open(filename, 'r', newline='') as f:
+                reader = csv.reader(f)
+                rows = [cls.csv_row_to_base_obj(row[0]) for row in reader]
+                return rows
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    """This method converts a single csv row to a base object"""
+    def csv_row_to_base_obj(cls, csv_row):
+        params = csv_row.split(',')
+
+        if (len(params) == 4):
+            _dict = {
+                'id': int(params[0]),
+                'size': int(params[1]),
+                'x': int(params[2]),
+                'y': int(params[3])
+            }
+        elif (len(params) == 5):
+            _dict = {
+                'id': int(params[0]),
+                'width': int(params[1]),
+                'height': int(params[2]),
+                'x': int(params[3]),
+                'y': int(params[4])
+            }
+        base_obj = cls.create(**_dict)
+        return base_obj
