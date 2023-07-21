@@ -2,6 +2,7 @@
 """ This module defines the Base super class """
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -142,3 +143,31 @@ class Base:
             }
         base_obj = cls.create(**_dict)
         return base_obj
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        rect = list_rectangles[0]
+        Base.draw_base_obj(rect.x, rect.y, rect.width, rect.height)
+
+    @staticmethod
+    def draw_base_obj(xcoord, ycoord, width, height):
+        # create a turtle object
+        my_turtle = turtle.Turtle()
+        # create a screen
+        wn = turtle.Screen()
+        wn.title("ALX")
+        # set the fill color
+        # fill_color = blue
+        # move the turtle to the starting position
+        my_turtle.penup()
+        my_turtle.goto(xcoord, ycoord)
+        my_turtle.pendown()
+
+        # draw the shape
+        for i in range(2):
+            my_turtle.forward(width)
+            my_turtle.right(90)
+            my_turtle.forward(height)
+            my_turtle.right(90)
+
+        my_turtle.done()
