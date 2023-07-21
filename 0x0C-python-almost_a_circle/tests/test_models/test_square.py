@@ -24,7 +24,8 @@ class TestSquare(unittest.TestCase):
         self.assertTrues(issubclass(Square, Rectangle))
 
     def test_square_init(self):
-        """test the initialization Square class"""
+        """test the initialization of Square instances with valid integers
+        """
         s1 = Square(5)
         self.assertEqual(s1.id, 9)
         self.assertEqual(s1.size, 5)
@@ -36,20 +37,28 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s2.y, 2)
 
     def test_none_integer_size_param(self):
+        """test the initialization of Square instances using invalid
+        non integer arguments
+        """
         with self.assertRaises(TypeError) as err:
             Square("size")
 
-    def test_no_param_initialization(self):
-        with self.assertRaises(TypeError) as err:
-            Square("size")
-        
         with self.assertRaises(TypeError) as err:
             Square(True)
-        
+
         with self.assertRaises(TypeError) as err:
             Square(10.5)
 
+    def test_no_param_initialization(self):
+        """test the initialization of Square instances using no arguments
+        """
+        with self.assertRaises(TypeError) as err:
+            Square()
+
     def test_zero_negative_param_init(self):
+        """test the initialization of Square instances using invalid
+        integers as arguments
+        """
         with self.assertRaises(ValueError) as err:
             Square(0)
 
@@ -57,10 +66,12 @@ class TestSquare(unittest.TestCase):
             Square(-12)
 
     def test_square_area(self):
+        """tests the area method of the Square instances"""
         s1 = Square(6)
         self.assertEqual(s1.area(), 36)
 
     def test_square_size(self):
+        """tests the size getter and setter of the Square instances"""
         s1 = Square(5)
         self.assertEqual(s1.size, 5)
 

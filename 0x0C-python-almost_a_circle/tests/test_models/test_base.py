@@ -7,9 +7,9 @@ from models.base import Base
 
 
 class Test_Base(unittest.TestCase):
-    """  """
+    """ contains all unittests for the models/base.py module """
     def test_pep8_base(self):
-        """  """
+        """ pep8 validation  """
         syntax = pep8.StyleGuide(quit=True)
         check = syntax.check_files(['models/base.py'])
         self.assertEqual(
@@ -43,7 +43,7 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(base_obj.id, -9)
 
     def test_json_string_to_file(self):
-        """  """
+        """ tests for the save_to_file function of the Base class """
         # this is an empty list
         empty_arr = []
         empty_json = json.dumps(empty_arr)
@@ -51,10 +51,11 @@ class Test_Base(unittest.TestCase):
         rect_dict_1 = None
         rect_json = Base.save_to_file(rect_dict_1)
 
-        #self.assertEqual(rect_json, empty_json)
+        # self.assertEqual(rect_json, empty_json)
 
     def to_json_string(self):
+        """tests for the to_json_string method of the Base class"""
         self.assertEqual(Base.to_json_string(None), '[]')
-        
+
         empty_arr = []
         self.assertEqual(Base.to_json_string(empty_arr), '[]')
