@@ -146,28 +146,33 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        rect = list_rectangles[0]
-        Base.draw_base_obj(rect.x, rect.y, rect.width, rect.height)
+        for rect in list_rectangles:
+            Base.draw_base_obj(rect)
+
+        for square in list_squares:
+            Base.draw_base_obj(square)
 
     @staticmethod
-    def draw_base_obj(xcoord, ycoord, width, height):
+    def draw_base_obj(base_obj):
+        """displays a single base object using the turtle module"""
         # create a turtle object
         my_turtle = turtle.Turtle()
-        # create a screen
-        wn = turtle.Screen()
-        wn.title("ALX")
-        # set the fill color
-        # fill_color = blue
         # move the turtle to the starting position
         my_turtle.penup()
-        my_turtle.goto(xcoord, ycoord)
+        my_turtle.goto(base_obj.x, base_obj.y)
         my_turtle.pendown()
+
+        # add fill color
+        fillcolor = 'blue'
+        my_turtle.fillcolor(fillcolor)
+        my_turtle.begin_fill()
 
         # draw the shape
         for i in range(2):
-            my_turtle.forward(width)
+            my_turtle.forward(base_obj.width)
             my_turtle.right(90)
-            my_turtle.forward(height)
+            my_turtle.forward(base_obj.height)
             my_turtle.right(90)
 
-        my_turtle.done()
+        my_turtle.end_fill()
+        # my_turtle.done()
