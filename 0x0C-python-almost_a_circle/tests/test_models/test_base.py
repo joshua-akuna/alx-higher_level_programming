@@ -56,6 +56,4 @@ class Test_Base(unittest.TestCase):
     def to_json_string(self):
         """tests for the to_json_string method of the Base class"""
         self.assertEqual(Base.to_json_string(None), '[]')
-
-        empty_arr = []
-        self.assertEqual(Base.to_json_string(empty_arr), '[]')
+        self.assertEqual(Base.to_json_string([]), '[]')
