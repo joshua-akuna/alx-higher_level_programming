@@ -53,7 +53,10 @@ class Test_Base(unittest.TestCase):
 
         # self.assertEqual(rect_json, empty_json)
 
-    def to_json_string(self):
+    def none_to_json_string(self):
         """tests for the to_json_string method of the Base class"""
         self.assertEqual(Base.to_json_string(None), '[]')
+
+    def empty_list_to_json_string(self):
+        """tests for the to_json_string method of the Base class"""
         self.assertEqual(Base.to_json_string([]), '[]')
