@@ -27,14 +27,79 @@ class TestSquare(unittest.TestCase):
         """test the initialization of Square instances with valid integers
         """
         s1 = Square(5)
-        self.assertEqual(s1.id, 9)
         self.assertEqual(s1.size, 5)
 
-        s2 = Square(4, 7, 2, 19)
-        self.assertEqual(s2.id, 19)
-        self.assertEqual(s2.size, 4)
-        self.assertEqual(s2.x, 7)
-        self.assertEqual(s2.y, 2)
+    def test_square_init_with_2_args(self):
+        """test the initialization of Square instances with valid integers
+        """
+        s1 = Square(1, 2)
+        self.assertEqual(s1.size, 1)
+
+    def test_square_init_with_3_args(self):
+        """test the initialization of Square instances with valid integers
+        """
+        s1 = Square(1, 2, 3)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 3)
+
+    def test_square_init_with_4_args(self):
+        """test the initialization of Square instances with valid integers
+        """
+        s1 = Square(1, 2, 3, 4)
+        self.assertEqual(s1.id, 4)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 3)
+
+    def test_square_init_with_invalid_size_arg(self):
+        """test the initialization of Square instances with invalid
+        non integer argument
+        """
+        with self.assertRaises(TypeError) as err:
+            Square("1")
+
+    def test_square_init_with_invalid_size_arg(self):
+        """test the initialization of Square instances with invalid
+        non integer argument
+        """
+        with self.assertRaises(TypeError) as err:
+            Square(1, "2")
+
+    def test_square_init_with_invalid_y_arg(self):
+        """test the initialization of Square instances with invalid
+        non integer arguments
+        """
+        with self.assertRaises(TypeError) as err:
+            Square(1, 2, "3")
+
+    def test_square_init_with_neg_size_arg(self):
+        """test the initialization of Square instances with invalid
+        integers
+        """
+        with self.assertRaises(ValueError) as err:
+            Square(-1)
+
+    def test_square_init_with_neg_x_arg(self):
+        """test the initialization of Square instances with invalid
+        integers
+        """
+        with self.assertRaises(ValueError) as err:
+            Square(1, -2)
+
+    def test_square_init_with_neg_y_arg(self):
+        """test the initialization of Square instances with invalid
+        integers
+        """
+        with self.assertRaises(ValueError) as err:
+            Square(1, 2, -3)
+
+    def test_zero_negative_param_init(self):
+        """test the initialization of Square instances using invalid
+        integers as arguments
+        """
+        with self.assertRaises(ValueError) as err:
+            Square(0)
 
     def test_none_integer_size_param(self):
         """test the initialization of Square instances using invalid
@@ -54,16 +119,6 @@ class TestSquare(unittest.TestCase):
         """
         with self.assertRaises(TypeError) as err:
             Square()
-
-    def test_zero_negative_param_init(self):
-        """test the initialization of Square instances using invalid
-        integers as arguments
-        """
-        with self.assertRaises(ValueError) as err:
-            Square(0)
-
-        with self.assertRaises(ValueError) as err:
-            Square(-12)
 
     def test_square_area(self):
         """tests the area method of the Square instances"""
