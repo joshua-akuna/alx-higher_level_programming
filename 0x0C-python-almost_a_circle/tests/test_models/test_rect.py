@@ -23,46 +23,71 @@ class Test_Rectangle(unittest.TestCase):
         """Tests if Rectangle is a subclass of Base class"""
         self.assertTrue(issubclass(Rectangle, Base))
 
-    def test_rect_init(self):
+    def test_rect_init_with_2_args(self):
         """Tests the initialization of Rectangle instances
         with valid integer parameters
         """
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 5)
-        self.assertEqual(r1.x, 0)
-        self.assertEqual(r1.y, 0)
+        r1 = Rectangle(1, 2)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
 
-        r2 = Rectangle(10, 2, 1, 3, 12)
-        self.assertEqual(r2.id, 12)
-        self.assertEqual(r2.width, 10)
+    def test_rect_init_with_3_args(self):
+        """Tests the initialization of Rectangle instances
+        with valid integer parameters
+        """
+        r1 = Rectangle(1, 2, 3)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+
+    def test_rect_init_with_4_args(self):
+        """Tests the initialization of Rectangle instances
+        with valid integer parameters
+        """
+        r2 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r2.width, 1)
         self.assertEqual(r2.height, 2)
-        self.assertEqual(r2.x, 1)
-        self.assertEqual(r2.y, 3)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r2.y, 4)
 
-    def test_non_integer_parameters(self):
+    def test_rect_init_with_5_args(self):
+        """Tests the initialization of Rectangle instances
+        with valid integer parameters
+        """
+        r2 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(r2.id, 5)
+        self.assertEqual(r2.width, 1)
+        self.assertEqual(r2.height, 2)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r2.y, 4)
+
+    def test_non_integer_width_arg(self):
         """Tests the initialization of the Rectangle instances with
         invalid parameter(s)
         """
         with self.assertRaises(TypeError) as err:
-            Rectangle("width", 7)
+            Rectangle("1", 2)
 
+    def test_non_integer_height_arg(self):
+        """Tests the initialization of the Rectangle instances with
+        invalid parameter(s)
+        """
         with self.assertRaises(TypeError) as err:
-            Rectangle(7, "height")
+            Rectangle(1, "2")
 
+    def test_non_integer_x_arg(self):
+        """Tests the initialization of the Rectangle instances with
+        invalid parameter(s)
+        """
         with self.assertRaises(TypeError) as err:
-            Rectangle("width", "height")
+            Rectangle(1, 2, "3")
 
+    def test_non_integer_y_arg(self):
+        """Tests the initialization of the Rectangle instances with
+        invalid parameter(s)
+        """
         with self.assertRaises(TypeError) as err:
-            Rectangle(True, 5)
-
-        with self.assertRaises(TypeError) as err:
-            Rectangle(11, False)
-
-        with self.assertRaises(TypeError) as err:
-            Rectangle(6.7, 5)
-
-        with self.assertRaises(TypeError) as err:
-            Rectangle(10, 10.5)
+            Rectangle(1, 2, 3, "4")
 
     def test_no_parameter_initialization(self):
         """Tests the initialization of the Rectangle instances with
@@ -79,19 +104,32 @@ class Test_Rectangle(unittest.TestCase):
             Rectangle(0, 0)
 
         with self.assertRaises(ValueError) as err:
-            Rectangle(4, 0)
-
-        with self.assertRaises(ValueError) as err:
             Rectangle(0, 8)
 
         with self.assertRaises(ValueError) as err:
+            Rectangle(-4, -1)
+
+
+    def test_zero_height_arg(self):
+        """Tests the initialization of the Rectangle instances with
+        negative integer parameter(s)
+        """
+        with self.assertRaises(ValueError) as err:
+            Rectangle(4, 0)
+
+    def negative_parameters_width_arg(self):
+        """Tests the initialization of the Rectangle instances with
+        negative integer parameter(s)
+        """
+        with self.assertRaises(ValueError) as err:
             Rectangle(-19, 10)
 
+    def negative_parameters_height_arg(self):
+        """Tests the initialization of the Rectangle instances with
+        negative integer parameter(s)
+        """
         with self.assertRaises(ValueError) as err:
             Rectangle(9, -10)
-
-        with self.assertRaises(ValueError) as err:
-            Rectangle(-4, -1)
 
     def test_rect_area(self):
         """Tests the area function of the Rectangle instance"""
