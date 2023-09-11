@@ -110,7 +110,7 @@ Write a function that returns the addition of 2 integers.
 ### [14. Const or not const]()
 Write a file that modifies the value of *myVar* to *333*.
 
-![https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/4ae30fb44f708dbb3abc211b784db614e615ca21.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230911%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230911T111722Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=be4e00ba6cfbccb565fa79e0a45330b669bcb57a011aaf25df37b7952cce906e](hell_yeah)
+![hell_yeah](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/4ae30fb44f708dbb3abc211b784db614e615ca21.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230911%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230911T111722Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=be4e00ba6cfbccb565fa79e0a45330b669bcb57a011aaf25df37b7952cce906e)
 
 Do you get it? Tweet! Post! Talk about it!
 Hint: Scope
