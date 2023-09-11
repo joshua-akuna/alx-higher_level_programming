@@ -131,5 +131,5 @@ Write a function that executes x times a function.
 Update this script by adding a new function *incr* that increments the integer *value*
 * You are not allowed to use var
 
-## AUTHORS
+## [AUTHOR]()
 [Akuna Joshua](https://linkedin.com/in/akuna-joshua-b34001101)
