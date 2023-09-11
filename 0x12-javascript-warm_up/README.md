@@ -130,3 +130,6 @@ Write a function that executes x times a function.
 ### [17. Increment object]()
 Update this script by adding a new function *incr* that increments the integer *value*
 * You are not allowed to use var
+
+## AUTHOR
+[Akuna Joshua](https://linkedin.com/in/akuna-joshua-b34001101)
