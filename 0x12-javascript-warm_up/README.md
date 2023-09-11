@@ -114,4 +114,19 @@ Write a file that modifies the value of *myVar* to *333*.
 
 Do you get it? Tweet! Post! Talk about it!
 Hint: Scope
-**This exercise doesn't pass semistandard** so don't woryy about it.
+**This exercise doesn't pass semistandard** so don't worry about it.
+
+### [15. Call me Moby]()
+Write a function that executes x times a function.
+* The function must be visible from outside
+* Prototype: function (x, theFunction)
+* You are not allowed to use var
+
+### [16. Add me maybe]()
+* The function must be visible from outside
+* Prototype: function (x, theFunction)
+* You are not allowed to use var
+
+### [17. Increment object]()
+Update this script by adding a new function *incr* that increments the integer *value*
+* You are not allowed to use var
