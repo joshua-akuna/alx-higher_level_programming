@@ -1,0 +1,25 @@
+#!/usr/bin/node
+/**
+ * The script defines the Square class
+ */
+const SuperSquare = require('./5-square');
+
+class Square extends SuperSquare {
+	constructor(size) {
+		super(size);
+	}
+
+	charPrint(c) {
+		let ch = c ? c : 'X';
+
+		for (let i = 0; i < this.height; i++) {
+			let line = '';
+			for (let j = 0; j < this.width; j++) {
+				line += ch;
+			}
+			console.log(line);
+		}
+	}
+}
+
+module.exports = Square
