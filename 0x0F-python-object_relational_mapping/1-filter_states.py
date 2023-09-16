@@ -17,8 +17,8 @@ if __name__ == '__main__':
                 charset='utf8'
         )
         cur = conn.cursor()
-        st = 'SELECT * FROM states WHERE name LIKE BINARY "N%" ORDER BY states.id ASC'
-        cur.execute(st)
+        cur.execute("""SELECT * FROM states
+                WHERE name LIKE BINARY "N%" ORDER BY states.id ASC""")
         rs = cur.fetchall()
 
         for row in rs:
