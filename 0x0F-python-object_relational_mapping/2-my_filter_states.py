@@ -17,8 +17,8 @@ if __name__ == "__main__":
                 charset='utf8'
         )
         cur = conn.cursor()
-        stmt = f"SELECT * FROM states WHERE name LIKE BINARY '{sys.argv[4]}'"
-        cur.execute(stmt)
+        stmt = "SELECT * FROM states WHERE name LIKE BINARY '{}'"
+        cur.execute(stmt.format(sys.argv[4]))
         rs = cur.fetchall()
 
         for row in rs:
