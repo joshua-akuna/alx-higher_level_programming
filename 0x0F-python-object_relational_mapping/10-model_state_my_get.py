@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-The script lists all the State object with the *name* passed
+The script lists all the State object with the name passed
 as argument from the database hbtn_0e_6_usa.
 """
 import sys
