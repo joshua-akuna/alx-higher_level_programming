@@ -2,9 +2,9 @@
 """
 The module defines the City class
 """
-from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
+from relationship_state import Base
 
 
 class City(Base):

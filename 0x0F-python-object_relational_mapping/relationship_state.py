@@ -3,9 +3,12 @@
 This module defines the State class,
 a sub class of the Base class
 """
+from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
-Base = declarative_base()
+
+_metadata = MetaData()
+Base = declarative_base(metadata=_metadata)
 
 
 class State(Base):
@@ -14,7 +17,5 @@ class State(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
-
     # Defines the one-to-many relationship with City
-    cities = relationship("City", back_populates='state',
-            casecade="all, delete-orphan")
+    cities = relationship("City", backref="states")
