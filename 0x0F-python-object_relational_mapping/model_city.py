@@ -6,6 +6,7 @@ from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
+
 class City(Base):
     """
     The City class, a Base subclass
@@ -18,4 +19,3 @@ class City(Base):
 
     # Defines the relationship between City and State models
     # state = relationship("State", back_populates = "cities")
-
