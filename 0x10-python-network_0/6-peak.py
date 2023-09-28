@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ The module defines the find_peak function """
 
+
 def find_peak(list_of_integers):
     """ The function defines an algorithm that finds a peak in
     a list of unsorted integers with the lowest complexity
