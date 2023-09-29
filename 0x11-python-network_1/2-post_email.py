@@ -9,4 +9,4 @@ import urllib.parse
 req_body = urllib.parse.urlencode({"email": sys.argv[2]}).encode("utf-8")
 req = Request(sys.argv[1], req_body)
 with urlopen(req) as response:
-    print(response.read())
+    print(response.read().decode("utf-8"))
