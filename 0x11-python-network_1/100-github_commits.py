@@ -9,23 +9,22 @@ import requests
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 3:
-        url_fmt = "https://api.github.com/repos/{}/{}/commits"
-        url = url_fmt.format(sys.argv[1], sys.argv[2])
-        res = requests.get(url)
-        commits = res.json()
+    url_fmt = "https://api.github.com/repos/{}/{}/commits"
+    url = url_fmt.format(sys.argv[1], sys.argv[2])
+    res = requests.get(url)
+    commits = res.json()
 
-        sorted_commits = sorted(
-                commits,
-                key=lambda x: x.get('commit').get('author').get('date'),
-                reverse=True
-            )
+    sorted_commits = sorted(
+            commits,
+            key=lambda x: x.get('commit').get('author').get('date'),
+            reverse=True
+        )
 
-        counter = 0;
-        for commit in sorted_commits:
-            if (counter == 10):
-                break
-            sha = commit.get('sha')
-            committer = commit.get('commit').get('author').get('name')
-            print('{}: {}'.format(sha, committer))
-            counter += 1
+    counter = 0
+    for commit in sorted_commits:
+        if (counter == 10):
+            break
+        sha = commit.get('sha')
+        committer = commit.get('commit').get('author').get('name')
+        print('{}: {}'.format(sha, committer))
+        counter += 1
