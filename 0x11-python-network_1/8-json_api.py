@@ -7,7 +7,6 @@ with a request parameter q and displays
 """
 import sys
 import requests
-import json
 
 
 if __name__ == '__main__':
