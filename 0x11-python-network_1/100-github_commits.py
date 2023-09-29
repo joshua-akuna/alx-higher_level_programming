@@ -14,14 +14,14 @@ if __name__ == '__main__':
     res = requests.get(url)
     commits = res.json()
 
-    sorted_commits = sorted(
-            commits,
-            key=lambda x: x.get('commit').get('author').get('date'),
-            reverse=True
-        )
+    #sorted_commits = sorted(
+    #        commits,
+    #        key=lambda x: x.get('commit').get('author').get('date'),
+    #        reverse=True
+    #    )
 
     counter = 0
-    for commit in sorted_commits:
+    for commit in commits:
         if (counter == 10):
             break
         sha = commit.get('sha')
