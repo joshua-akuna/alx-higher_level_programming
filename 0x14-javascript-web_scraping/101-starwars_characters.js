@@ -26,7 +26,7 @@ if (process.argv.length === 3) {
 }
 
 function printActors(actorsUrls, index){
-	if (index === actorsUrls.length - 1){
+	if (index === actorsUrls.length){
 		return;
 	}
 
@@ -37,6 +37,6 @@ function printActors(actorsUrls, index){
 		}
 		const actor = JSON.parse(body);
 		console.log(actor.name);
+	    printActors(actorsUrls, ++index);
 	});
-	printActors(actorsUrls, ++index);
 }
