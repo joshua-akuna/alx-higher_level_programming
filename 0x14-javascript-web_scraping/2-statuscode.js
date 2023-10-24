@@ -7,13 +7,11 @@
  */
 const request = require('request');
 
-if (process.argv.length === 3) {
-  console.log(process.argv[2]);
-  request(process.argv[2], (err, response, body) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log(response && response.statusCode);
-  });
-}
+console.log(process.argv[2]);
+request(process.argv[2], (err, response, body) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(response && response.statusCode);
+});
