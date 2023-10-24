@@ -21,15 +21,22 @@ if (process.argv.length === 3) {
     const data = JSON.parse(body);
     const characters = data.characters;
 
-    for (const character of characters) {
-      request(character, (err, response, body) => {
-        if (err) {
-          console.log(err);
-          return;
-        }
-        const actor = JSON.parse(body);
-        console.log(actor.name);
-      });
-    }
+    printActors(characters, 0);
   });
+}
+
+function printActors(actorsUrls, index){
+	if (index === actorsUrls.length - 1){
+		return;
+	}
+
+	request(actorsUrls[index], (err, response, body)=> {
+		if (err){
+			console.log(err);
+			return;
+		}
+		const actor = JSON.parse(body);
+		console.log(actor.name);
+	});
+	printActors(actorsUrls, ++index);
 }
