@@ -15,7 +15,6 @@ if (process.argv.length === 3) {
       return;
     }
     const tasks = JSON.parse(body);
-    console.log(tasks);
     const map = {};
     for (const task of tasks) {
       if (task.completed) {
