@@ -25,18 +25,18 @@ if (process.argv.length === 3) {
   });
 }
 
-function printActors(actorsUrls, index){
-	if (index === actorsUrls.length){
-		return;
-	}
+function printActors (actorsUrls, index) {
+  if (index === actorsUrls.length) {
+    return;
+  }
 
-	request(actorsUrls[index], (err, response, body)=> {
-		if (err){
-			console.log(err);
-			return;
-		}
-		const actor = JSON.parse(body);
-		console.log(actor.name);
-	    printActors(actorsUrls, ++index);
-	});
+  request(actorsUrls[index], (err, response, body) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    const actor = JSON.parse(body);
+    console.log(actor.name);
+    printActors(actorsUrls, ++index);
+  });
 }
