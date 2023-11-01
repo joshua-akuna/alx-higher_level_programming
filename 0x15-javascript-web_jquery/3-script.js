@@ -1,5 +1,7 @@
-$("document").ready(function() {
-	$("DIV#red_header").click(function() {
-		$("headrr").css("color", "FF0000");
-	});
+$('document').ready(() => {
+  $('DIV#red_header').click(() => {
+    if (!$('header').hasClass('red')) {
+      $('header').addClass('red');
+    }
+  });
 });
